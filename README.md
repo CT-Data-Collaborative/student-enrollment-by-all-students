@@ -1,8 +1,6 @@
 Student-Enrollment-by-All-Students
 
-[![Build Status](https://travis-ci.org/CT-Data-Collaborative/student-enrollment-by-all-students.svg?branch=master)](https://travis-ci.org/CT-Data-Collaborative/student-enrollment-by-all-students)
-
-Student Enrollment reports the number of enrolled students per year, per subgroup.
+Student Enrollment reports the number of enrolled students per year, for all students.
 
 Data Source: <http://edsight.ct.gov/>
 

@@ -57,7 +57,8 @@ years <- c("2007-2008",
            "2013-2014",
            "2014-2015",
            "2015-2016", 
-           "2016-2017")
+           "2016-2017", 
+           "2017-2018")
 
 backfill_years <- expand.grid(
   `FixedDistrict` = unique(districts$`FixedDistrict`),
@@ -101,13 +102,13 @@ complete_student_enrollment <- complete_student_enrollment %>%
   select(`District`, `FIPS`, `Year`, `Variable`, `Measure Type`, `Value`)
 
 #Use this to find if there are any duplicate entries for a given district
-# test <- complete_student_enrollment[,c("District", "Year")]
-# test2<-test[duplicated(test), ]
+test <- complete_student_enrollment[,c("District", "Year")]
+test2<-test[duplicated(test), ]
 
 #Write CSV
 write.table(
   complete_student_enrollment,
-  file.path(path_to_top_level, "data", "student_enrollment_all_students_2008-2016.csv"),
+  file.path(path_to_top_level, "data", "student_enrollment_all_students_2008-2018.csv"),
   sep = ",",
   row.names = F
 )
