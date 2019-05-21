@@ -36,6 +36,10 @@ for (i in 1:length(student_enrollment_dist_noTrend)) {
 #Rename statewide data...
 student_enrollment_dist[["District"]][student_enrollment_dist$"District" == "Total"]<- "Connecticut"
 
+student_enrollment_dist$District <- gsub('The Woodstock Academy', 'Woodstock Academy', student_enrollment_dist$District)
+student_enrollment_dist$District <- gsub('Capital Preparatory Harbor School District', 'Capital Preparatory Harbor School Inc. District', student_enrollment_dist$District)
+
+
 #backfill Districts
 district_dp_URL <- 'https://raw.githubusercontent.com/CT-Data-Collaborative/ct-school-district-list/master/datapackage.json'
 district_dp <- datapkg_read(path = district_dp_URL)
@@ -108,7 +112,7 @@ test2<-test[duplicated(test), ]
 #Write CSV
 write.table(
   complete_student_enrollment,
-  file.path(path_to_top_level, "data", "student_enrollment_all_students_2008-2018.csv"),
+  file.path(path_to_top_level, "data", "student_enrollment_all_students_2008-2019.csv"),
   sep = ",",
   row.names = F
 )
